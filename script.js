@@ -16,17 +16,21 @@ document.body.prepend(squaresButton); //the prepend method appends to the body b
 const container = document.querySelector("#container");
 // the #cointainer is thelling the querySelector that I am looking for something with id="container"
 
-// creates all the divs
-for (let i = 0; i < (16*16); i++) {
-    const someDiv = document.createElement("div");
-    someDiv.classList.add("content");
-    // adds the "content" class to the <div>, so it can be styled with CSS or selected later in JavaScript.
-    container.appendChild(someDiv);
+// function that creates all the divs
+function createDivDraw (size) {
+    for (let i = 0; i < size; i++) {
+        const eachDiv = document.createElement("div");
+        eachDiv.classList.add("content");
+        // adds the "content" class to the <div>, so it can be styled with CSS or selected later in JavaScript.
+        container.appendChild(eachDiv);
 
-    someDiv.addEventListener("mouseover", () => {
-        someDiv.style.backgroundColor = "black"; // Change color on hover
-    });
+        eachDiv.addEventListener("mouseover", () => {
+            eachDiv.style.backgroundColor = "black"; // Change color on hover
+        });
+    }
 }
+
+createDivDraw(10);
 
 
 // Go back to white button
