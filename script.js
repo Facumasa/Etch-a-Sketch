@@ -18,19 +18,24 @@ const container = document.querySelector("#container");
 
 // function that creates all the divs
 function createDivDraw (size) {
-    for (let i = 0; i < size; i++) {
-        const eachDiv = document.createElement("div");
-        eachDiv.classList.add("content");
-        // adds the "content" class to the <div>, so it can be styled with CSS or selected later in JavaScript.
-        container.appendChild(eachDiv);
+    for (let j=0; j < size; j++) {
+        const rowDiv = document.createElement("div");
+        rowDiv.classList.add('rowstyle');
+        container.appendChild(rowDiv);
+        for (let i = 0; i < size; i++) {
+            const eachDiv = document.createElement("div");
+            eachDiv.classList.add("content");
+            // adds the "content" class to the <div>, so it can be styled with CSS or selected later in JavaScript.
+            rowDiv.appendChild(eachDiv);
 
-        eachDiv.addEventListener("mouseover", () => {
-            eachDiv.style.backgroundColor = "black"; // Change color on hover
-        });
-    }
+            eachDiv.addEventListener("mouseover", () => {
+                eachDiv.style.backgroundColor = "black"; // Change color on hover
+            });
+        }
+    }    
 }
 
-createDivDraw(10);
+createDivDraw(40);
 
 
 // Go back to white button
