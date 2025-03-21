@@ -8,7 +8,7 @@ let numSquaresGlobal = 40;
 const squaresButton = document.createElement("button"); // Create button
 squaresButton.classList.add("button1"); // Add a class for CSS styling (class name is button1)
 
-squaresButton.textContent = "Number of Squares side"; // Set button text
+squaresButton.textContent = "Number of Squares per side"; // Set button text
 
 // document.body.appendChild(squaresButton); // Add the button to the page (this would ad it at the bottom of the body created from the html file, so AFTER the container)
 document.body.prepend(squaresButton); //the prepend method appends to the body but before any other child present in the body
@@ -18,7 +18,7 @@ const container = document.querySelector("#container");
 
 // function that creates all the divs
 function createDivDraw (size) {
-    document.getElementById("container").replaceChildr0en(); //Borra todos los divs hijos de container (todos los cuadraditos que existian)
+    document.getElementById("container").replaceChildren(); //Borra todos los divs hijos de container (todos los cuadraditos que existian)
     for (let j=0; j < size; j++) {
         const rowDiv = document.createElement("div");
         rowDiv.classList.add('rowstyle');
