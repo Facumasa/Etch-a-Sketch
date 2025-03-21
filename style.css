@@ -25,6 +25,7 @@ body {
 .content {
     background-color: white; /* White background */
     flex: 1;
+    border:1px solid black;
 }
 
 .button1 {
