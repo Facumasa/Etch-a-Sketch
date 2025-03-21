@@ -1,6 +1,7 @@
 
 //Global variables
 let numSquaresGlobal = 40;
+let opacity = 0;
 
 // DOM modification -----------------------------------------------------------
 
@@ -30,7 +31,13 @@ function createDivDraw (size) {
             rowDiv.appendChild(eachDiv);
 
             eachDiv.addEventListener("mouseover", () => {
-                eachDiv.style.backgroundColor = "black"; // Change color on hover
+                const randomColor = `rgb(${Math.floor(Math.random() * 256)}, 
+                          ${Math.floor(Math.random() * 256)}, 
+                          ${Math.floor(Math.random() * 256)})`; //all this is to create three random numbers from 0-255 and then a color wirh RGB i j k
+                eachDiv.style.backgroundColor = randomColor; // Change color on hover
+                // eachDiv.style.backgroundColor = "black";
+                // opacity += 0.1; // Increase opacity by 0.1
+                // eachDiv.style.opacity = opacity;
             });
         }
     }    
