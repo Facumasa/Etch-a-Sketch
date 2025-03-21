@@ -27,6 +27,7 @@ function createDivDraw (size) {
         for (let i = 0; i < size; i++) {
             const eachDiv = document.createElement("div");
             eachDiv.classList.add("content");
+            eachDiv.style.opacity = 0; //makes every element start transparent (opacity=0)
             // adds the "content" class to the <div>, so it can be styled with CSS or selected later in JavaScript.
             rowDiv.appendChild(eachDiv);
 
@@ -35,9 +36,8 @@ function createDivDraw (size) {
                           ${Math.floor(Math.random() * 256)}, 
                           ${Math.floor(Math.random() * 256)})`; //all this is to create three random numbers from 0-255 and then a color wirh RGB i j k
                 eachDiv.style.backgroundColor = randomColor; // Change color on hover
-                // eachDiv.style.backgroundColor = "black";
-                // opacity += 0.1; // Increase opacity by 0.1
-                // eachDiv.style.opacity = opacity;
+                opacity = parseFloat(eachDiv.style.opacity) + 0.1; // Increase opacity by 0.1
+                eachDiv.style.opacity = opacity;
             });
         }
     }    
