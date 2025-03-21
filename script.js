@@ -36,7 +36,7 @@ function createDivDraw (size) {
     }    
 }
 
-createDivDraw(40);
+createDivDraw(numSquaresGlobal);
 
 
 // Go back to white button
@@ -48,9 +48,7 @@ deleteButton.textContent = "Delete"; // Set button text
 const squares = document.querySelectorAll(".content"); // Select all elements with class "content"
 
 deleteButton.addEventListener("click", () => {
-    squares.forEach(square => {
-        square.style.backgroundColor = "white"; // Change background color
-    });
+    createDivDraw(numSquaresGlobal);
 });
 
 document.body.appendChild(deleteButton); // Add the button to the page
@@ -63,6 +61,12 @@ squaresButton.addEventListener("click", () => {
       alert("Error, number of squares assumed 40");
       numberSquares = 40;
     }
-    numSquaresGlobal = parseInt(numberSquares); //updates the value to the number given
+    else if (parseInt(numberSquares) > 100) {
+        alert("The max is 100 so it doesnt run slow, so a number of squares of 100 will be assumed")
+        numSquaresGlobal = 100;
+    }
+    else if (parseInt(numberSquares) < 101) {
+        numSquaresGlobal = parseInt(numberSquares); //updates the value to the number given
+    }
     createDivDraw(numSquaresGlobal);
 });
